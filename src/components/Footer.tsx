@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <h3 className="font-heading text-2xl font-semibold tracking-wide text-cloud">
-              AQUA<span className="text-aqua">BLADE</span>
+              Your<span className="text-aqua">Anwei</span>
             </h3>
             <span className="teal-bar mt-4" />
             <p className="mt-6 text-sm leading-relaxed text-cloud/40">
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-[11px] tracking-wider text-cloud/20">
-            &copy; {new Date().getFullYear()} AquaBLADE. All rights reserved.
+            &copy; {new Date().getFullYear()} YourAnwei. All rights reserved.
           </p>
         </div>
       </div>

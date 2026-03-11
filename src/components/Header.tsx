@@ -30,7 +30,7 @@ export default function Header() {
             className="group flex items-center gap-2 cursor-pointer"
           >
             <span className="font-heading text-2xl font-semibold tracking-wide text-cloud sm:text-[1.65rem]">
-              AQUA<span className="text-aqua">BLADE</span>
+              Your<span className="text-aqua">Anwei</span>
             </span>
           </Link>
 
