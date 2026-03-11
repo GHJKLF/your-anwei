@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | AquaBLADE",
+};
+
 export default function PrivacyPage() {
   return (
     <>
@@ -28,7 +34,7 @@ export default function PrivacyPage() {
           </div>
           <div>
             <h2 className="font-heading text-xl font-medium text-ink">Contact</h2>
-            <p className="mt-4">Questions about privacy or data deletion? Email <a href="mailto:support@your-anwei.com" className="text-aqua hover:text-aqua-light cursor-pointer">support@your-anwei.com</a>.</p>
+            <p className="mt-4">Questions about privacy or data deletion? Email <a href="mailto:support@anwei.com" className="text-aqua hover:text-aqua-light cursor-pointer">support@anwei.com</a>.</p>
           </div>
         </div>
       </section>

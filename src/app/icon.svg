@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Squeegee blade / water droplet shape -->
+  <path
+    d="M16 4 C16 4 6 14 6 20 C6 25.5 10.5 30 16 30 C21.5 30 26 25.5 26 20 C26 14 16 4 16 4Z"
+    fill="#0E8C7F"
+  />
+  <!-- Highlight glint -->
+  <ellipse cx="13" cy="18" rx="2" ry="3" fill="white" opacity="0.25" transform="rotate(-15 13 18)"/>
+</svg>

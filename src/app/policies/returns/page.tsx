@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Returns & Refund Policy | AquaBLADE",
+};
 
 export default function ReturnsPage() {
   return (
@@ -23,7 +28,7 @@ export default function ReturnsPage() {
             <ol className="mt-4 space-y-4 text-sm leading-[1.7] text-stone">
               <li className="flex items-start gap-4">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-aqua/30 text-[12px] font-medium text-aqua">1</span>
-                <span>Email <a href="mailto:support@your-anwei.com" className="text-aqua hover:text-aqua-light cursor-pointer">support@your-anwei.com</a> with your order number.</span>
+                <span>Email <a href="mailto:support@anwei.com" className="text-aqua hover:text-aqua-light cursor-pointer">support@anwei.com</a> with your order number.</span>
               </li>
               <li className="flex items-start gap-4">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-aqua/30 text-[12px] font-medium text-aqua">2</span>

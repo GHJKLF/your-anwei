@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Shipping Policy | AquaBLADE",
+};
 
 export default function ShippingPage() {
   return (
@@ -14,19 +19,27 @@ export default function ShippingPage() {
         <div className="mx-auto max-w-3xl px-6 lg:px-10 space-y-10">
           <div>
             <h2 className="font-heading text-xl font-medium text-ink">Shipping Rates</h2>
-            <div className="mt-4 border border-mist divide-y divide-mist">
-              {[
-                { dest: "United States (Continental)", rate: "Free" },
-                { dest: "Canada", rate: "$9.99" },
-                { dest: "United Kingdom", rate: "$12.99" },
-                { dest: "Australia", rate: "$14.99" },
-              ].map((r) => (
-                <div key={r.dest} className="flex items-center justify-between px-5 py-3.5 text-sm">
-                  <span className="text-ink">{r.dest}</span>
-                  <span className="font-medium text-aqua">{r.rate}</span>
-                </div>
-              ))}
-            </div>
+            <table className="mt-4 w-full border border-mist text-sm">
+              <thead>
+                <tr className="border-b border-mist">
+                  <th scope="col" className="px-5 py-3.5 text-left font-medium text-ink">Destination</th>
+                  <th scope="col" className="px-5 py-3.5 text-right font-medium text-ink">Rate</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-mist">
+                {[
+                  { dest: "United States (Continental)", rate: "Free" },
+                  { dest: "Canada", rate: "$9.99" },
+                  { dest: "United Kingdom", rate: "$12.99" },
+                  { dest: "Australia", rate: "$14.99" },
+                ].map((r) => (
+                  <tr key={r.dest}>
+                    <td className="px-5 py-3.5 text-ink">{r.dest}</td>
+                    <td className="px-5 py-3.5 text-right font-medium text-aqua">{r.rate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
           <div>
             <h2 className="font-heading text-xl font-medium text-ink">Delivery Times</h2>

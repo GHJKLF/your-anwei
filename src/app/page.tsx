@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PRODUCT } from "@/lib/config";
+
+export const metadata: Metadata = {
+  title: "AquaBLADE | One Pass. Zero Streaks. German Engineered Squeegee Kit",
+};
 
 export default function Home() {
   return (
@@ -16,7 +21,7 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-10">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
           <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
             {/* Left - Copy */}
             <div>
@@ -136,7 +141,7 @@ export default function Home() {
           </p>
           <Link
             href="/product"
-            className="mt-8 inline-flex items-center gap-2 border border-aqua/30 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.15em] text-aqua transition-all duration-300 hover:bg-aqua hover:text-ocean cursor-pointer"
+            className="mt-8 inline-flex items-center gap-2 bg-coral px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-coral-light cursor-pointer"
           >
             See the Kit
           </Link>

@@ -66,15 +66,28 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-4" aria-label="Payment methods">
-            {["Visa", "Mastercard", "Amex", "PayPal"].map((m) => (
-              <span
-                key={m}
-                className="text-[11px] font-medium uppercase tracking-wider text-cloud/20"
-              >
-                {m}
-              </span>
-            ))}
+          <div className="flex items-center gap-2" aria-label="Payment methods">
+            {/* Visa */}
+            <div className="flex h-7 w-11 items-center justify-center rounded bg-cloud/10">
+              <span className="text-[10px] font-bold italic text-cloud">VISA</span>
+            </div>
+            {/* Mastercard */}
+            <div className="flex h-7 w-11 items-center justify-center rounded bg-cloud/10">
+              <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+                <circle cx="9" cy="8" r="6" fill="#EB001B" opacity="0.9"/>
+                <circle cx="15" cy="8" r="6" fill="#F79E1B" opacity="0.9"/>
+                <path d="M12 3.2a6 6 0 010 9.6 6 6 0 000-9.6z" fill="#FF5F00"/>
+              </svg>
+            </div>
+            {/* Amex */}
+            <div className="flex h-7 w-11 items-center justify-center rounded bg-cloud/10">
+              <span className="text-[8px] font-bold text-cloud tracking-wider">AMEX</span>
+            </div>
+            {/* PayPal */}
+            <div className="flex h-7 w-11 items-center justify-center rounded bg-cloud/10">
+              <span className="text-[9px] font-bold text-[#00457C]">Pay</span>
+              <span className="text-[9px] font-bold text-[#0079C1]">Pal</span>
+            </div>
           </div>
           <p className="text-[11px] tracking-wider text-cloud/20">
             &copy; {new Date().getFullYear()} AquaBLADE. All rights reserved.

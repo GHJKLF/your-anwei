@@ -96,10 +96,10 @@ export default function ContactPage() {
               Or email us directly
             </p>
             <a
-              href="mailto:support@your-anwei.com"
+              href="mailto:support@anwei.com"
               className="mt-2 inline-block text-sm font-medium text-aqua hover:text-aqua-light transition-colors cursor-pointer"
             >
-              support@your-anwei.com
+              support@anwei.com
             </a>
           </div>
         </div>

@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import FAQAccordion from "@/components/FAQAccordion";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "FAQ | AquaBLADE - Common Questions Answered",
+};
 
 export default function FAQPage() {
   return (
@@ -22,6 +27,14 @@ export default function FAQPage() {
       <section className="bg-glass py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <FAQAccordion />
+        </div>
+      </section>
+
+      <section className="bg-ocean py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
+          <h2 className="font-heading text-2xl font-bold text-cloud sm:text-3xl">Ready for Streak-Free Glass?</h2>
+          <p className="mt-4 text-cloud/60">Join 2,847+ happy customers who switched to AquaBLADE.</p>
+          <a href="/product" className="mt-8 inline-block rounded-lg bg-coral px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-coral-light">Shop Now</a>
         </div>
       </section>
     </>

@@ -13,8 +13,8 @@ interface BeforeAfterProps {
 export default function BeforeAfter({
   beforeImage = "/images/before.png",
   afterImage = "/images/after.png",
-  beforeAlt = "Surface before cleaning with visible streaks",
-  afterAlt = "Surface after AquaBLADE, completely clear",
+  beforeAlt = "Streaky glass surface before using AquaBLADE",
+  afterAlt = "Crystal clear glass surface after using AquaBLADE",
 }: BeforeAfterProps) {
   const [position, setPosition] = useState(50);
 

@@ -57,6 +57,7 @@ export default function ProductGallery({ images = defaultImages }: ProductGaller
               src={img.src}
               alt=""
               fill
+              loading="lazy"
               className="object-contain bg-cloud p-2"
               sizes="72px"
             />
