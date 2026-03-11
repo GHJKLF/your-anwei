@@ -13,90 +13,50 @@ interface BeforeAfterProps {
 export default function BeforeAfter({
   beforeImage = "/images/before.png",
   afterImage = "/images/after.png",
-  beforeAlt = "Surface before cleaning with visible streaks and smudges",
-  afterAlt = "Surface after cleaning with AquaBLADE, completely streak-free",
+  beforeAlt = "Surface before cleaning with visible streaks",
+  afterAlt = "Surface after AquaBLADE, completely clear",
 }: BeforeAfterProps) {
   const [position, setPosition] = useState(50);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <div
-        className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-cream select-none"
+        className="relative aspect-[16/10] overflow-hidden bg-midnight select-none"
         role="img"
-        aria-label={`Before and after comparison. Before: ${beforeAlt}. After: ${afterAlt}`}
+        aria-label={`Before and after comparison`}
       >
-        {/* After (bottom layer, full) */}
-        <Image
-          src={afterImage}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 80vw"
-          aria-hidden="true"
-        />
+        {/* After layer */}
+        <Image src={afterImage} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" aria-hidden="true" />
 
-        {/* Before (top layer, clipped) */}
-        <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ width: `${position}%` }}
-        >
-          <Image
-            src={beforeImage}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 80vw"
-            aria-hidden="true"
-          />
+        {/* Before layer (clipped) */}
+        <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
+          <Image src={beforeImage} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" aria-hidden="true" />
         </div>
 
-        {/* Divider line */}
-        <div
-          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg"
-          style={{ left: `${position}%` }}
-          aria-hidden="true"
-        >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-sage text-white shadow-lg">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <polyline points="15 18 9 12 15 6" />
-              <polyline points="9 18 15 12 9 6" transform="translate(6, 0)" />
+        {/* Divider */}
+        <div className="absolute top-0 bottom-0 w-px bg-gold/80" style={{ left: `${position}%` }} aria-hidden="true">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center border border-gold/60 bg-midnight/80 backdrop-blur-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold" aria-hidden="true">
+              <path d="M18 8L22 12L18 16" /><path d="M6 8L2 12L6 16" />
             </svg>
           </div>
         </div>
 
-        {/* Slider input */}
-        <label className="sr-only" htmlFor="before-after-slider">
-          Adjust comparison slider
-        </label>
+        {/* Hidden range input */}
+        <label className="sr-only" htmlFor="ba-slider">Adjust comparison</label>
         <input
-          id="before-after-slider"
+          id="ba-slider"
           type="range"
           min="0"
           max="100"
           value={position}
           onChange={(e) => setPosition(Number(e.target.value))}
-          className="absolute inset-0 z-10 h-full w-full opacity-0 cursor-pointer"
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={position}
-          aria-label="Before and after comparison position"
+          className="absolute inset-0 z-10 h-full w-full opacity-0 cursor-ew-resize"
         />
-      </div>
 
-      {/* Labels */}
-      <div className="flex justify-between px-2 text-sm font-medium text-slate">
-        <span>Before</span>
-        <span>After</span>
+        {/* Labels */}
+        <span className="absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.15em] text-cream/60">Before</span>
+        <span className="absolute bottom-4 right-4 text-[11px] font-medium uppercase tracking-[0.15em] text-gold">After</span>
       </div>
     </div>
   );

@@ -1,30 +1,29 @@
-import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
+import Link from "next/link";
 
 export default function FAQPage() {
   return (
-    <div className="pt-16">
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h1 className="text-center font-heading text-3xl font-bold text-charcoal sm:text-4xl">
-            Frequently Asked Questions
+    <>
+      <section className="relative bg-midnight grain pt-32 pb-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <span className="gold-line" />
+          <h1 className="mt-6 font-heading text-4xl font-semibold text-cream sm:text-5xl">
+            Questions & Answers
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-slate sm:text-base">
-            Can&apos;t find the answer you&apos;re looking for? Reach out to our team on
-            the{" "}
-            <Link
-              href="/contact"
-              className="font-semibold text-sage-dark underline underline-offset-2 transition-colors duration-200 hover:text-sage cursor-pointer"
-            >
-              contact page
-            </Link>
-            .
+          <p className="mt-4 max-w-lg text-sm leading-[1.8] text-cream/40">
+            Everything you need to know about AquaBLADE. Can&apos;t find your answer?{" "}
+            <Link href="/contact" className="text-gold transition-colors hover:text-gold-light cursor-pointer">
+              Contact us
+            </Link>.
           </p>
-          <div className="mt-10">
-            <FAQAccordion />
-          </div>
         </div>
       </section>
-    </div>
+
+      <section className="bg-ivory py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <FAQAccordion />
+        </div>
+      </section>
+    </>
   );
 }

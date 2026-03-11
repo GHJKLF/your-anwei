@@ -2,37 +2,37 @@ import Link from "next/link";
 import { NAV_LINKS, POLICY_LINKS } from "@/lib/config";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-charcoal text-white" role="contentinfo">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {/* About */}
-          <div>
-            <h3 className="font-heading text-lg font-semibold tracking-tight">
-              Aqua<span className="text-sage-light">BLADE</span>
+    <footer className="relative bg-midnight grain" role="contentinfo">
+      <div className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-10">
+        {/* Top section */}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2fr_1fr_1fr]">
+          {/* Brand */}
+          <div className="max-w-sm">
+            <h3 className="font-heading text-2xl font-semibold tracking-wide text-cream">
+              AQUA<span className="text-gold">BLADE</span>
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-gray-300">
-              Professional-grade squeegee kit engineered in Germany.
-              One pass. Zero streaks. Built to last.
+            <span className="gold-line mt-4" />
+            <p className="mt-6 text-sm leading-relaxed text-cream/40">
+              Precision glass cleaning, engineered in Germany. Every detail
+              considered. Every surface perfected.
             </p>
-            <p className="mt-4 text-xs font-medium tracking-wider text-sage-light uppercase">
-              Made in Germany
+            <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.2em] text-gold/60">
+              German Engineered &middot; Built to Last
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigate */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-              Quick Links
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/60">
+              Navigate
             </h4>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-5 space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 transition-colors duration-200 hover:text-sage-light cursor-pointer"
+                    className="text-sm text-cream/40 transition-colors duration-300 hover:text-gold cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -41,17 +41,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Policies */}
+          {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-              Policies
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/60">
+              Legal
             </h4>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-5 space-y-3">
               {POLICY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 transition-colors duration-200 hover:text-sage-light cursor-pointer"
+                    className="text-sm text-cream/40 transition-colors duration-300 hover:text-gold cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -61,25 +61,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Payment Badges & Copyright */}
-        <div className="mt-10 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            {/* Payment icons */}
-            <div className="flex items-center gap-3" aria-label="Accepted payment methods">
-              {["Visa", "Mastercard", "Amex", "PayPal"].map((method) => (
-                <span
-                  key={method}
-                  className="rounded bg-white/10 px-2.5 py-1 text-xs font-medium text-gray-300"
-                >
-                  {method}
-                </span>
-              ))}
-            </div>
+        {/* Divider */}
+        <div className="mt-16 border-t border-gold/10" />
 
-            <p className="text-xs text-gray-400">
-              &copy; {currentYear} AquaBLADE. All rights reserved.
-            </p>
+        {/* Bottom */}
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div className="flex items-center gap-4" aria-label="Payment methods">
+            {["Visa", "Mastercard", "Amex", "PayPal"].map((m) => (
+              <span
+                key={m}
+                className="text-[11px] font-medium uppercase tracking-wider text-cream/20"
+              >
+                {m}
+              </span>
+            ))}
           </div>
+          <p className="text-[11px] tracking-wider text-cream/20">
+            &copy; {new Date().getFullYear()} AquaBLADE. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -9,54 +9,63 @@ interface QuantitySelectorProps {
 export default function QuantitySelector({ onChange }: QuantitySelectorProps) {
   const [quantity, setQuantity] = useState(1);
 
-  const update = (newQty: number) => {
-    if (newQty < 1 || newQty > 10) return;
-    setQuantity(newQty);
-    onChange?.(newQty);
+  const update = (n: number) => {
+    if (n < 1 || n > 10) return;
+    setQuantity(n);
+    onChange?.(n);
   };
 
   return (
-    <div className="space-y-3">
-      <div className="inline-flex items-center rounded-lg border border-gray-200 bg-white">
-        <button
-          type="button"
-          onClick={() => update(quantity - 1)}
-          disabled={quantity <= 1}
-          className="flex h-10 w-10 items-center justify-center text-lg font-medium text-slate transition-colors duration-200 hover:bg-cream disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          aria-label="Decrease quantity"
-        >
-          -
-        </button>
-        <span
-          className="flex h-10 w-12 items-center justify-center border-x border-gray-200 text-sm font-semibold text-charcoal"
-          aria-live="polite"
-          aria-label={`Quantity: ${quantity}`}
-        >
-          {quantity}
+    <div className="space-y-4">
+      <div className="flex items-center gap-4">
+        <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-slate">
+          Quantity
         </span>
-        <button
-          type="button"
-          onClick={() => update(quantity + 1)}
-          disabled={quantity >= 10}
-          className="flex h-10 w-10 items-center justify-center text-lg font-medium text-slate transition-colors duration-200 hover:bg-cream disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          aria-label="Increase quantity"
-        >
-          +
-        </button>
+        <div className="inline-flex items-center border border-border-light">
+          <button
+            type="button"
+            onClick={() => update(quantity - 1)}
+            disabled={quantity <= 1}
+            className="flex h-11 w-11 items-center justify-center text-sm text-charcoal transition-colors hover:bg-cream disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
+            aria-label="Decrease quantity"
+          >
+            &minus;
+          </button>
+          <span
+            className="flex h-11 w-14 items-center justify-center border-x border-border-light text-sm font-medium text-charcoal"
+            aria-live="polite"
+          >
+            {quantity}
+          </span>
+          <button
+            type="button"
+            onClick={() => update(quantity + 1)}
+            disabled={quantity >= 10}
+            className="flex h-11 w-11 items-center justify-center text-sm text-charcoal transition-colors hover:bg-cream disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
+            aria-label="Increase quantity"
+          >
+            +
+          </button>
+        </div>
       </div>
 
-      {/* Upsell nudge */}
+      {/* Upsell */}
       {quantity === 1 && (
         <button
           type="button"
           onClick={() => update(2)}
-          className="block rounded-lg border border-terracotta-light/30 bg-terracotta-light/10 px-4 py-2.5 text-left transition-colors duration-200 hover:border-terracotta-light/50 hover:bg-terracotta-light/15 cursor-pointer"
+          className="flex w-full items-center justify-between border border-gold/20 bg-gold/5 px-5 py-3.5 text-left transition-all duration-300 hover:border-gold/40 hover:bg-gold/10 cursor-pointer"
         >
-          <span className="block text-sm font-semibold text-terracotta">
-            Buy 2 &amp; Save
-          </span>
-          <span className="block text-xs text-slate">
-            2 for $69.95 (save $10)
+          <div>
+            <span className="block text-[13px] font-medium text-charcoal">
+              Buy 2 &amp; Save $10
+            </span>
+            <span className="block text-[12px] text-slate">
+              Most popular choice
+            </span>
+          </div>
+          <span className="font-heading text-lg font-semibold text-gold">
+            $69.95
           </span>
         </button>
       )}

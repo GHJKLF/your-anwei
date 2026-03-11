@@ -3,57 +3,62 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const defaultImages = [
+  { src: "/images/product-1.webp", alt: "AquaBLADE Kit - complete set" },
+  { src: "/images/product-2.webp", alt: "AquaBLADE silicone blade detail" },
+  { src: "/images/product-3.webp", alt: "AquaBLADE grip and construction" },
+  { src: "/images/product-4.webp", alt: "AquaBLADE kit contents" },
+  { src: "/images/product-5.webp", alt: "AquaBLADE in use" },
+];
+
 interface ProductGalleryProps {
   images?: { src: string; alt: string }[];
 }
 
-const defaultImages = [
-  { src: "/images/product-1.webp", alt: "AquaBLADE Squeegee Kit - full kit view" },
-  { src: "/images/product-2.webp", alt: "AquaBLADE silicone blade close-up" },
-  { src: "/images/product-3.webp", alt: "AquaBLADE ergonomic grip detail" },
-  { src: "/images/product-4.webp", alt: "AquaBLADE complete kit contents" },
-  { src: "/images/product-5.webp", alt: "AquaBLADE in use on window" },
-];
-
 export default function ProductGallery({ images = defaultImages }: ProductGalleryProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [active, setActive] = useState(0);
 
   return (
-    <div className="space-y-3">
-      {/* Main Image */}
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-cream">
+    <div className="space-y-4">
+      {/* Main image */}
+      <div className="relative aspect-square overflow-hidden bg-cream">
         <Image
-          src={images[activeIndex].src}
-          alt={images[activeIndex].alt}
+          src={images[active].src}
+          alt={images[active].alt}
           fill
-          className="object-contain p-6"
+          className="object-contain p-10"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority={activeIndex === 0}
+          priority={active === 0}
         />
+        {/* Subtle corner accents */}
+        <div className="absolute top-4 left-4 h-8 w-8 border-t border-l border-gold/20" aria-hidden="true" />
+        <div className="absolute top-4 right-4 h-8 w-8 border-t border-r border-gold/20" aria-hidden="true" />
+        <div className="absolute bottom-4 left-4 h-8 w-8 border-b border-l border-gold/20" aria-hidden="true" />
+        <div className="absolute bottom-4 right-4 h-8 w-8 border-b border-r border-gold/20" aria-hidden="true" />
       </div>
 
-      {/* Thumbnail Strip */}
+      {/* Thumbnails */}
       <div className="flex gap-2" role="tablist" aria-label="Product images">
-        {images.map((image, index) => (
+        {images.map((img, i) => (
           <button
-            key={image.src}
+            key={img.src}
             type="button"
             role="tab"
-            aria-selected={index === activeIndex}
-            aria-label={`View ${image.alt}`}
-            onClick={() => setActiveIndex(index)}
-            className={`relative aspect-square w-16 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 sm:w-20 cursor-pointer ${
-              index === activeIndex
-                ? "border-sage ring-1 ring-sage/30"
-                : "border-gray-200 hover:border-sage-light"
+            aria-selected={i === active}
+            aria-label={`View ${img.alt}`}
+            onClick={() => setActive(i)}
+            className={`relative aspect-square w-16 overflow-hidden transition-all duration-300 sm:w-[72px] cursor-pointer ${
+              i === active
+                ? "ring-1 ring-gold ring-offset-2 ring-offset-ivory"
+                : "opacity-50 hover:opacity-80"
             }`}
           >
             <Image
-              src={image.src}
+              src={img.src}
               alt=""
               fill
-              className="object-contain bg-cream p-1"
-              sizes="80px"
+              className="object-contain bg-cream p-2"
+              sizes="72px"
             />
           </button>
         ))}

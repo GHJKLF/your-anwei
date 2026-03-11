@@ -6,51 +6,40 @@ import { FAQ_ITEMS } from "@/lib/config";
 export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-gray-200">
-      {FAQ_ITEMS.map((item, index) => (
-        <div key={index} className="py-4">
+    <div className="mx-auto max-w-3xl">
+      {FAQ_ITEMS.map((item, i) => (
+        <div key={i} className="border-b border-border-light">
           <button
             type="button"
-            onClick={() => toggle(index)}
-            className="flex w-full items-center justify-between gap-4 text-left cursor-pointer group"
-            aria-expanded={openIndex === index}
-            aria-controls={`faq-answer-${index}`}
+            onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            className="flex w-full items-center justify-between gap-6 py-6 text-left cursor-pointer group"
+            aria-expanded={openIndex === i}
           >
-            <span className="font-heading text-base font-semibold text-charcoal transition-colors duration-200 group-hover:text-sage-dark sm:text-lg">
+            <span className="font-heading text-lg font-medium text-charcoal transition-colors duration-200 group-hover:text-gold sm:text-xl">
               {item.question}
             </span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`flex-shrink-0 text-sage transition-transform duration-300 ${
-                openIndex === index ? "rotate-180" : ""
+            <span
+              className={`flex h-8 w-8 shrink-0 items-center justify-center border transition-all duration-300 ${
+                openIndex === i
+                  ? "border-gold bg-gold text-midnight rotate-45"
+                  : "border-border-light text-slate"
               }`}
               aria-hidden="true"
             >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </span>
           </button>
 
           <div
-            id={`faq-answer-${index}`}
-            role="region"
-            aria-labelledby={`faq-question-${index}`}
-            className={`overflow-hidden transition-all duration-300 ${
-              openIndex === index ? "mt-3 max-h-96 opacity-100" : "max-h-0 opacity-0"
+            className={`overflow-hidden transition-all duration-400 ${
+              openIndex === i ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <p className="text-sm leading-relaxed text-slate sm:text-base">
+            <p className="text-sm leading-[1.8] text-slate">
               {item.answer}
             </p>
           </div>

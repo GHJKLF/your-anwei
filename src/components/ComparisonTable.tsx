@@ -2,37 +2,37 @@ import { COMPARISON } from "@/lib/config";
 
 export default function ComparisonTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+    <div className="overflow-x-auto">
       <table className="w-full text-sm" role="table">
         <thead>
-          <tr className="border-b border-gray-200">
-            <th className="px-4 py-4 text-left font-heading text-sm font-semibold text-charcoal sm:px-6">
+          <tr className="border-b border-border-light">
+            <th className="py-5 pr-6 text-left text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-light">
               Feature
             </th>
-            <th className="bg-sage/5 px-4 py-4 text-center font-heading text-sm font-semibold text-sage-dark sm:px-6">
+            <th className="px-4 py-5 text-center text-[11px] font-semibold uppercase tracking-[0.15em] text-gold">
               AquaBLADE
             </th>
-            <th className="px-4 py-4 text-center font-heading text-sm font-semibold text-slate sm:px-6">
+            <th className="px-4 py-5 text-center text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-light">
               Paper Towels
             </th>
-            <th className="px-4 py-4 text-center font-heading text-sm font-semibold text-slate sm:px-6">
+            <th className="px-4 py-5 text-center text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-light">
               Cheap Squeegee
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-100">
+        <tbody className="divide-y divide-border-light">
           {COMPARISON.map((row) => (
-            <tr key={row.feature} className="transition-colors duration-150 hover:bg-cream/50">
-              <td className="px-4 py-3.5 font-medium text-charcoal sm:px-6">
+            <tr key={row.feature}>
+              <td className="py-4 pr-6 font-medium text-charcoal">
                 {row.feature}
               </td>
-              <td className="bg-sage/5 px-4 py-3.5 text-center font-semibold text-sage-dark sm:px-6">
+              <td className="px-4 py-4 text-center font-medium text-charcoal">
                 {row.aquablade}
               </td>
-              <td className="px-4 py-3.5 text-center text-slate sm:px-6">
+              <td className="px-4 py-4 text-center text-slate-light">
                 {row.paperTowels}
               </td>
-              <td className="px-4 py-3.5 text-center text-slate sm:px-6">
+              <td className="px-4 py-4 text-center text-slate-light">
                 {row.cheapSqueegee}
               </td>
             </tr>
