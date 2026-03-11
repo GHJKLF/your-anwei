@@ -7,7 +7,7 @@ interface CTAButtonProps {
   quantity?: number;
   className?: string;
   size?: "sm" | "md" | "lg";
-  variant?: "gold" | "outline" | "dark";
+  variant?: "coral" | "outline" | "dark";
 }
 
 export default function CTAButton({
@@ -15,7 +15,7 @@ export default function CTAButton({
   quantity = 1,
   className = "",
   size = "md",
-  variant = "gold",
+  variant = "coral",
 }: CTAButtonProps) {
   const sizeClasses = {
     sm: "px-6 py-2.5 text-[12px]",
@@ -24,9 +24,9 @@ export default function CTAButton({
   };
 
   const variantClasses = {
-    gold: "bg-gold text-midnight hover:bg-gold-light",
-    outline: "border border-gold/40 text-gold hover:bg-gold hover:text-midnight",
-    dark: "bg-midnight text-cream hover:bg-midnight-light",
+    coral: "bg-coral text-ocean hover:bg-coral-light",
+    outline: "border border-aqua/40 text-aqua hover:bg-aqua hover:text-ocean",
+    dark: "bg-ocean text-cloud hover:bg-ocean-light",
   };
 
   const handleClick = () => {
@@ -37,7 +37,7 @@ export default function CTAButton({
     <button
       type="button"
       onClick={handleClick}
-      className={`inline-flex items-center justify-center font-medium uppercase tracking-[0.15em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 active:scale-[0.98] cursor-pointer ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center justify-center font-medium uppercase tracking-[0.15em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-coral/50 focus-visible:ring-offset-2 active:scale-[0.98] cursor-pointer ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
     >
       {text}
     </button>

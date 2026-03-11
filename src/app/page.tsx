@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Hero - Full screen dark */}
-      <section className="relative min-h-screen bg-midnight grain flex items-center overflow-hidden">
+      <section className="relative min-h-screen bg-ocean grain flex items-center overflow-hidden">
         {/* Subtle radial glow */}
         <div
           className="absolute inset-0 opacity-30"
@@ -20,18 +20,18 @@ export default function Home() {
           <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
             {/* Left - Copy */}
             <div>
-              <span className="gold-line animate-fade-up" />
-              <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.25em] text-gold/60 animate-fade-up delay-100">
+              <span className="teal-bar animate-fade-up" />
+              <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.25em] text-aqua/60 animate-fade-up delay-100">
                 German Engineered Precision
               </p>
-              <h1 className="mt-5 font-heading text-5xl font-semibold leading-[1.1] text-cream animate-fade-up delay-200 sm:text-6xl lg:text-7xl">
+              <h1 className="mt-5 font-heading text-5xl font-semibold leading-[1.1] text-cloud animate-fade-up delay-200 sm:text-6xl lg:text-7xl">
                 One Pass.
                 <br />
                 Zero Streaks.
                 <br />
-                <span className="text-gold">Finally.</span>
+                <span className="text-aqua">Finally.</span>
               </h1>
-              <p className="mt-8 max-w-md text-base leading-[1.8] text-cream/40 animate-fade-up delay-300">
+              <p className="mt-8 max-w-md text-base leading-[1.8] text-cloud/40 animate-fade-up delay-300">
                 The AquaBLADE kit replaces paper towels, cheap squeegees, and
                 endless frustration. Medical-grade silicone. Stainless steel
                 core. One pass is all it takes.
@@ -39,13 +39,13 @@ export default function Home() {
               <div className="mt-10 flex flex-wrap items-center gap-5 animate-fade-up delay-400">
                 <Link
                   href="/product"
-                  className="bg-gold px-10 py-4 text-[13px] font-medium uppercase tracking-[0.15em] text-midnight transition-all duration-300 hover:bg-gold-light cursor-pointer"
+                  className="bg-coral px-10 py-4 text-[13px] font-medium uppercase tracking-[0.15em] text-ocean transition-all duration-300 hover:bg-coral-light cursor-pointer"
                 >
                   Discover the Kit
                 </Link>
                 <Link
                   href="/product#how-it-works"
-                  className="group flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.15em] text-cream/40 transition-colors duration-300 hover:text-gold cursor-pointer"
+                  className="group flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.15em] text-cloud/40 transition-colors duration-300 hover:text-aqua cursor-pointer"
                 >
                   How It Works
                   <svg
@@ -78,14 +78,14 @@ export default function Home() {
                 />
               </div>
               {/* Decorative frame */}
-              <div className="absolute -inset-4 border border-gold/10" aria-hidden="true" />
+              <div className="absolute -inset-4 border border-aqua/10" aria-hidden="true" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Value Props - Cream */}
-      <section className="bg-ivory py-24 sm:py-32">
+      <section className="bg-glass py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 lg:gap-16">
             {[
@@ -111,11 +111,11 @@ export default function Home() {
               },
             ].map((prop) => (
               <div key={prop.number}>
-                <span className="text-[11px] font-medium text-gold/60">{prop.number}</span>
-                <h3 className="mt-3 font-heading text-2xl font-medium text-charcoal">
+                <span className="text-[11px] font-medium text-aqua/60">{prop.number}</span>
+                <h3 className="mt-3 font-heading text-2xl font-medium text-ink">
                   {prop.title}
                 </h3>
-                <p className="mt-3 text-sm leading-[1.7] text-slate">
+                <p className="mt-3 text-sm leading-[1.7] text-stone">
                   {prop.desc}
                 </p>
               </div>
@@ -125,18 +125,18 @@ export default function Home() {
       </section>
 
       {/* Social Proof - Dark strip */}
-      <section className="relative bg-midnight grain py-20">
+      <section className="relative bg-ocean grain py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-          <p className="font-heading text-2xl font-medium text-cream/60 sm:text-3xl">
+          <p className="font-heading text-2xl font-medium text-cloud/60 sm:text-3xl">
             Join{" "}
-            <span className="text-gold">
+            <span className="text-aqua">
               {PRODUCT.reviewCount.toLocaleString()}+
             </span>{" "}
             people who stopped fighting streaky glass.
           </p>
           <Link
             href="/product"
-            className="mt-8 inline-flex items-center gap-2 border border-gold/30 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.15em] text-gold transition-all duration-300 hover:bg-gold hover:text-midnight cursor-pointer"
+            className="mt-8 inline-flex items-center gap-2 border border-aqua/30 px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.15em] text-aqua transition-all duration-300 hover:bg-aqua hover:text-ocean cursor-pointer"
           >
             See the Kit
           </Link>

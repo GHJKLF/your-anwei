@@ -18,21 +18,21 @@ export default function QuantitySelector({ onChange }: QuantitySelectorProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-4">
-        <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-slate">
+        <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-stone">
           Quantity
         </span>
-        <div className="inline-flex items-center border border-border-light">
+        <div className="inline-flex items-center border border-mist">
           <button
             type="button"
             onClick={() => update(quantity - 1)}
             disabled={quantity <= 1}
-            className="flex h-11 w-11 items-center justify-center text-sm text-charcoal transition-colors hover:bg-cream disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
+            className="flex h-11 w-11 items-center justify-center text-sm text-ink transition-colors hover:bg-cloud disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
             aria-label="Decrease quantity"
           >
             &minus;
           </button>
           <span
-            className="flex h-11 w-14 items-center justify-center border-x border-border-light text-sm font-medium text-charcoal"
+            className="flex h-11 w-14 items-center justify-center border-x border-mist text-sm font-medium text-ink"
             aria-live="polite"
           >
             {quantity}
@@ -41,7 +41,7 @@ export default function QuantitySelector({ onChange }: QuantitySelectorProps) {
             type="button"
             onClick={() => update(quantity + 1)}
             disabled={quantity >= 10}
-            className="flex h-11 w-11 items-center justify-center text-sm text-charcoal transition-colors hover:bg-cream disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
+            className="flex h-11 w-11 items-center justify-center text-sm text-ink transition-colors hover:bg-cloud disabled:opacity-20 disabled:cursor-not-allowed cursor-pointer"
             aria-label="Increase quantity"
           >
             +
@@ -54,17 +54,17 @@ export default function QuantitySelector({ onChange }: QuantitySelectorProps) {
         <button
           type="button"
           onClick={() => update(2)}
-          className="flex w-full items-center justify-between border border-gold/20 bg-gold/5 px-5 py-3.5 text-left transition-all duration-300 hover:border-gold/40 hover:bg-gold/10 cursor-pointer"
+          className="flex w-full items-center justify-between border border-aqua/20 bg-aqua/5 px-5 py-3.5 text-left transition-all duration-300 hover:border-aqua/40 hover:bg-aqua/10 cursor-pointer"
         >
           <div>
-            <span className="block text-[13px] font-medium text-charcoal">
+            <span className="block text-[13px] font-medium text-ink">
               Buy 2 &amp; Save $10
             </span>
-            <span className="block text-[12px] text-slate">
+            <span className="block text-[12px] text-stone">
               Most popular choice
             </span>
           </div>
-          <span className="font-heading text-lg font-semibold text-gold">
+          <span className="font-heading text-lg font-semibold text-aqua">
             $69.95
           </span>
         </button>

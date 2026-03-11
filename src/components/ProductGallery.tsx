@@ -21,7 +21,7 @@ export default function ProductGallery({ images = defaultImages }: ProductGaller
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className="relative aspect-square overflow-hidden bg-cream">
+      <div className="relative aspect-square overflow-hidden bg-cloud">
         <Image
           src={images[active].src}
           alt={images[active].alt}
@@ -31,10 +31,10 @@ export default function ProductGallery({ images = defaultImages }: ProductGaller
           priority={active === 0}
         />
         {/* Subtle corner accents */}
-        <div className="absolute top-4 left-4 h-8 w-8 border-t border-l border-gold/20" aria-hidden="true" />
-        <div className="absolute top-4 right-4 h-8 w-8 border-t border-r border-gold/20" aria-hidden="true" />
-        <div className="absolute bottom-4 left-4 h-8 w-8 border-b border-l border-gold/20" aria-hidden="true" />
-        <div className="absolute bottom-4 right-4 h-8 w-8 border-b border-r border-gold/20" aria-hidden="true" />
+        <div className="absolute top-4 left-4 h-8 w-8 border-t border-l border-aqua/20" aria-hidden="true" />
+        <div className="absolute top-4 right-4 h-8 w-8 border-t border-r border-aqua/20" aria-hidden="true" />
+        <div className="absolute bottom-4 left-4 h-8 w-8 border-b border-l border-aqua/20" aria-hidden="true" />
+        <div className="absolute bottom-4 right-4 h-8 w-8 border-b border-r border-aqua/20" aria-hidden="true" />
       </div>
 
       {/* Thumbnails */}
@@ -49,7 +49,7 @@ export default function ProductGallery({ images = defaultImages }: ProductGaller
             onClick={() => setActive(i)}
             className={`relative aspect-square w-16 overflow-hidden transition-all duration-300 sm:w-[72px] cursor-pointer ${
               i === active
-                ? "ring-1 ring-gold ring-offset-2 ring-offset-ivory"
+                ? "ring-1 ring-aqua ring-offset-2 ring-offset-glass"
                 : "opacity-50 hover:opacity-80"
             }`}
           >
@@ -57,7 +57,7 @@ export default function ProductGallery({ images = defaultImages }: ProductGaller
               src={img.src}
               alt=""
               fill
-              className="object-contain bg-cream p-2"
+              className="object-contain bg-cloud p-2"
               sizes="72px"
             />
           </button>

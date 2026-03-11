@@ -9,21 +9,21 @@ export default function FAQAccordion() {
   return (
     <div className="mx-auto max-w-3xl">
       {FAQ_ITEMS.map((item, i) => (
-        <div key={i} className="border-b border-border-light">
+        <div key={i} className="border-b border-mist">
           <button
             type="button"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             className="flex w-full items-center justify-between gap-6 py-6 text-left cursor-pointer group"
             aria-expanded={openIndex === i}
           >
-            <span className="font-heading text-lg font-medium text-charcoal transition-colors duration-200 group-hover:text-gold sm:text-xl">
+            <span className="font-heading text-lg font-medium text-ink transition-colors duration-200 group-hover:text-aqua sm:text-xl">
               {item.question}
             </span>
             <span
               className={`flex h-8 w-8 shrink-0 items-center justify-center border transition-all duration-300 ${
                 openIndex === i
-                  ? "border-gold bg-gold text-midnight rotate-45"
-                  : "border-border-light text-slate"
+                  ? "border-aqua bg-aqua text-ocean rotate-45"
+                  : "border-mist text-stone"
               }`}
               aria-hidden="true"
             >
@@ -39,7 +39,7 @@ export default function FAQAccordion() {
               openIndex === i ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <p className="text-sm leading-[1.8] text-slate">
+            <p className="text-sm leading-[1.8] text-stone">
               {item.answer}
             </p>
           </div>

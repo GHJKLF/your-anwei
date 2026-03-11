@@ -16,9 +16,9 @@ export default function UseCaseGrid() {
             className="object-cover transition-all duration-700 group-hover:scale-105"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-midnight/20 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ocean/80 via-ocean/20 to-transparent" aria-hidden="true" />
           <div className="absolute bottom-0 left-0 right-0 p-5">
-            <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gold/80">
+            <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-aqua/80">
               {uc.name}
             </span>
           </div>

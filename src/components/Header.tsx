@@ -18,7 +18,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-midnight/95 backdrop-blur-xl shadow-[0_1px_0_rgba(200,169,110,0.15)]"
+          ? "bg-ocean/95 backdrop-blur-xl shadow-[0_1px_0_rgba(200,169,110,0.15)]"
           : "bg-transparent"
       }`}
     >
@@ -29,8 +29,8 @@ export default function Header() {
             href="/"
             className="group flex items-center gap-2 cursor-pointer"
           >
-            <span className="font-heading text-2xl font-semibold tracking-wide text-cream sm:text-[1.65rem]">
-              AQUA<span className="text-gold">BLADE</span>
+            <span className="font-heading text-2xl font-semibold tracking-wide text-cloud sm:text-[1.65rem]">
+              AQUA<span className="text-aqua">BLADE</span>
             </span>
           </Link>
 
@@ -40,14 +40,14 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-medium uppercase tracking-[0.15em] text-cream/60 transition-colors duration-300 hover:text-gold cursor-pointer"
+                className="text-[13px] font-medium uppercase tracking-[0.15em] text-cloud/60 transition-colors duration-300 hover:text-aqua cursor-pointer"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/product"
-              className="ml-2 border border-gold/40 px-6 py-2.5 text-[13px] font-medium uppercase tracking-[0.15em] text-gold transition-all duration-300 hover:bg-gold hover:text-midnight cursor-pointer"
+              className="ml-2 border border-aqua/40 px-6 py-2.5 text-[13px] font-medium uppercase tracking-[0.15em] text-aqua transition-all duration-300 hover:bg-aqua hover:text-ocean cursor-pointer"
             >
               Shop Now
             </Link>
@@ -56,7 +56,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center text-cream md:hidden cursor-pointer"
+            className="flex h-10 w-10 items-center justify-center text-cloud md:hidden cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -90,14 +90,14 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="border-t border-gold/10 bg-midnight/98 backdrop-blur-xl md:hidden">
+        <div className="border-t border-aqua/10 bg-ocean/98 backdrop-blur-xl md:hidden">
           <nav className="mx-auto max-w-7xl px-6 py-6" aria-label="Mobile">
             <div className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="py-3 text-[13px] font-medium uppercase tracking-[0.15em] text-cream/60 transition-colors duration-200 hover:text-gold cursor-pointer"
+                  className="py-3 text-[13px] font-medium uppercase tracking-[0.15em] text-cloud/60 transition-colors duration-200 hover:text-aqua cursor-pointer"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -105,7 +105,7 @@ export default function Header() {
               ))}
               <Link
                 href="/product"
-                className="mt-4 border border-gold/40 px-6 py-3 text-center text-[13px] font-medium uppercase tracking-[0.15em] text-gold transition-all duration-300 hover:bg-gold hover:text-midnight cursor-pointer"
+                className="mt-4 border border-aqua/40 px-6 py-3 text-center text-[13px] font-medium uppercase tracking-[0.15em] text-aqua transition-all duration-300 hover:bg-aqua hover:text-ocean cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
                 Shop Now

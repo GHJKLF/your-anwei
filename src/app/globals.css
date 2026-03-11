@@ -1,49 +1,44 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-midnight: #0C1220;
-  --color-midnight-light: #1A2332;
-  --color-midnight-lighter: #243044;
-  --color-gold: #C8A96E;
-  --color-gold-light: #E8D5A8;
-  --color-gold-muted: #C8A96E33;
-  --color-cream: #F0EDE5;
-  --color-cream-dark: #E5E0D5;
-  --color-ivory: #FAFAF7;
-  --color-charcoal: #1A1A1A;
-  --color-slate: #6B7280;
-  --color-slate-light: #9CA3AF;
-  --color-border-light: #E5E2DA;
-  --color-border-dark: #2A3548;
-  --color-white: #FFFFFF;
+  /* Primary - teal/aqua (matches the product) */
+  --color-aqua: #0E8C7F;
+  --color-aqua-light: #2DD4BF;
+  --color-aqua-dark: #065F56;
+  --color-aqua-muted: #0E8C7F15;
 
-  --font-heading: "Cormorant Garant", serif;
-  --font-body: "Outfit", sans-serif;
+  /* Dark sections - deep ocean */
+  --color-ocean: #0C2D3E;
+  --color-ocean-light: #1A3D4E;
+
+  /* Backgrounds - clean glass-like whites */
+  --color-glass: #F7FAFA;
+  --color-frost: #EDF5F4;
+  --color-cloud: #FFFFFF;
+
+  /* Text */
+  --color-ink: #1A2B32;
+  --color-stone: #5A6B73;
+  --color-stone-light: #8A9BA3;
+
+  /* Accent - warm coral for CTAs (contrast against cool teal) */
+  --color-coral: #E8614D;
+  --color-coral-light: #F28C7D;
+  --color-coral-dark: #D14A36;
+
+  /* Borders */
+  --color-mist: #D1DDE0;
+  --color-mist-dark: #B0C4C8;
+
+  --font-heading: "Bricolage Grotesque", sans-serif;
+  --font-body: "Manrope", sans-serif;
 }
 
 :root {
-  --background: #FAFAF7;
-  --foreground: #0C1220;
+  --background: #F7FAFA;
+  --foreground: #1A2B32;
 }
 
-/* Grain texture overlay */
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  z-index: 1;
-}
-
-.grain > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
@@ -57,42 +52,34 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* Gold accent line */
-.gold-line {
+/* Accent bar */
+.teal-bar {
   display: block;
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, #C8A96E, #E8D5A8);
+  width: 40px;
+  height: 3px;
+  background: #0E8C7F;
+  border-radius: 2px;
 }
 
-/* Stagger reveal animation */
+/* Soft reveal animation */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-up {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
 
-/* Selection color */
 ::selection {
-  background: #C8A96E33;
-  color: #0C1220;
+  background: #0E8C7F25;
+  color: #1A2B32;
 }

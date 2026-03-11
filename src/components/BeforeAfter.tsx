@@ -21,7 +21,7 @@ export default function BeforeAfter({
   return (
     <div className="space-y-3">
       <div
-        className="relative aspect-[16/10] overflow-hidden bg-midnight select-none"
+        className="relative aspect-[16/10] overflow-hidden bg-ocean select-none"
         role="img"
         aria-label={`Before and after comparison`}
       >
@@ -34,9 +34,9 @@ export default function BeforeAfter({
         </div>
 
         {/* Divider */}
-        <div className="absolute top-0 bottom-0 w-px bg-gold/80" style={{ left: `${position}%` }} aria-hidden="true">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center border border-gold/60 bg-midnight/80 backdrop-blur-sm">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold" aria-hidden="true">
+        <div className="absolute top-0 bottom-0 w-px bg-aqua/80" style={{ left: `${position}%` }} aria-hidden="true">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center border border-aqua/60 bg-ocean/80 backdrop-blur-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-aqua" aria-hidden="true">
               <path d="M18 8L22 12L18 16" /><path d="M6 8L2 12L6 16" />
             </svg>
           </div>
@@ -55,8 +55,8 @@ export default function BeforeAfter({
         />
 
         {/* Labels */}
-        <span className="absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.15em] text-cream/60">Before</span>
-        <span className="absolute bottom-4 right-4 text-[11px] font-medium uppercase tracking-[0.15em] text-gold">After</span>
+        <span className="absolute bottom-4 left-4 text-[11px] font-medium uppercase tracking-[0.15em] text-cloud/60">Before</span>
+        <span className="absolute bottom-4 right-4 text-[11px] font-medium uppercase tracking-[0.15em] text-aqua">After</span>
       </div>
     </div>
   );
